@@ -8,3 +8,9 @@ Kubernetes - V2
 - Created app.js with Node and Express
 - Created a /error route to make the app crash on path match
 - Tested the app in browser
+
+### Step 2: Node App Dockerization
+
+- Wrote Dockerfile
+- Created docker-compose
+- Tested the app (port 80/story)
