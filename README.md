@@ -14,3 +14,16 @@ Kubernetes - V2
 - Wrote Dockerfile
 - Created docker-compose
 - Tested the app (port 80/story)
+
+### Step 3: Push docker image to DockerHub
+
+- Created repo on DockerHub
+- Added tag to local image
+- Pushed image to DockerHub
+
+```sh
+docker build -t alisonv2/kub-v2 .
+docker push alisonv2/kub-v2
+```
+
+### 
