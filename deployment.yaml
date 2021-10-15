@@ -14,16 +14,16 @@ spec:
     spec:
       containers:
         - name: story
-          image: alisonv2/kub-v2
+          image: alisonv2/kub-v2:2
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-volume
           env:
             - name: STORY_FOLDER
               valueFrom: 
                 configMapKeyRef:
                   name: data-store-env
                   key: folder
-          volumeMounts:
-            - mountPath: /app/story
-              name: story-volume
       volumes:
         - name: story-volume
           persistentVolumeClaim:

@@ -57,6 +57,19 @@ In Postman : GET and POST requests to {minikube-url}/story
 
 - Defined a persistent volume
 - Created a persistent volume claim
+- Checked storage class
+- Applied PV and PVC files
+- Reapplied deployment
+- Checked if PVs and PVCs have been correctly applied
+
+```sh
+kubectl get sc
+kubectl apply -f host-pv.yaml
+kubectl apply -f host-pvc.yaml
+kubectl apply -f deployment.yaml
+kubectl get pv
+kubectl get pvc
+```
 
 Why PV?
 - To have the volumes totally detached and independants from the Nodes and Pods
@@ -67,4 +80,24 @@ Notes :
 - hostPath will only work in local environment as it doesn't work on multiple-nodes environments
 - Decided to go with multiple config files instead of one big yaml file for better clarity, as the app will get bigger
 
+### Step 6: Environment Variables & ConfigMap
+
+- Changed app.js to use env variable
+- Rebuilt the image
+- Pushed the image to DockerHub
+
+```sh
+docker build -t alisonv2/kub-v2:2 .
+docker push alisonv2/kub-v2:2
+```
+- Created environment.yaml 
+- Applied environment file
+- Added env in deployment.yaml
+- Reapplied deployment
+
+```sh
+kubectl apply -f environment.yaml
+kubectl get configmaps
+kubectl apply -f deployment.yaml
+```
 
