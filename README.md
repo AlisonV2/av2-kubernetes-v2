@@ -102,4 +102,9 @@ kubectl get configmaps
 kubectl apply -f deployment.yaml
 ```
 
+### Step 7: Update
+
+Moved all yaml files to kubernetes folder.
+Must be careful to cd into the kubernetes folder before applying the files.
+
 ### More on V3 :)
